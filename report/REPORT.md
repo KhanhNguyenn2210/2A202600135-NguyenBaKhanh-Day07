@@ -318,11 +318,11 @@ Tôi sẽ bổ sung thêm trường metadata `topic` (ví dụ: `hủy chuyến`
 | Tiêu chí | Loại | Điểm tự đánh giá |
 |----------|------|-------------------|
 | Warm-up | Cá nhân | 5/ 5 |
-| Document selection | Nhóm | 7/ 10 |
-| Chunking strategy | Nhóm | 10/ 15 |
-| My approach | Cá nhân | 7/ 10 |
+| Document selection | Nhóm | 8/ 10 |
+| Chunking strategy | Nhóm | 12/ 15 |
+| My approach | Cá nhân | 8/ 10 |
 | Similarity predictions | Cá nhân | 4/ 5 |
 | Results | Cá nhân | 8/ 10 |
 | Core implementation (tests) | Cá nhân | 30/ 30 |
-| Demo | Nhóm | 3/ 5 |
-| **Tổng** | | **74 / 100** |
+| Demo | Nhóm | 4/ 5 |
+| **Tổng** | | **79 / 100** |
