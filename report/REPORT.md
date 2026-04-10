@@ -325,4 +325,4 @@ Tôi sẽ bổ sung thêm trường metadata `topic` (ví dụ: `hủy chuyến`
 | Results | Cá nhân | 8/ 10 |
 | Core implementation (tests) | Cá nhân | 30/ 30 |
 | Demo | Nhóm | 4/ 5 |
-| **Tổng** | | **79 / 100** |
+| **Tổng** | | **79 / 90** |
