@@ -1,8 +1,8 @@
 # Báo Cáo Lab 7: Embedding & Vector Store
 
-**Họ tên:** [Tên sinh viên]
-**Nhóm:** [Tên nhóm]
-**Ngày:** [Ngày nộp]
+**Họ tên:** Nguyễn Bá Khánh
+**Nhóm:** D3-C401
+**Ngày:** 10/04/2026
 
 ---
 
@@ -12,29 +12,35 @@
 
 **High cosine similarity nghĩa là gì?**
 > *Viết 1-2 câu:*
+Cosine similarity đo góc giữa hai vector trong không gian nhiều chiều. Khi hai đoạn văn bản được chuyển thành embedding vector, high cosine similarity (gần 1.0) có nghĩa là hai vector đó cùng hướng — tức là hai đoạn văn nói về cùng một chủ đề, ý nghĩa tương tự nhau, dù có thể dùng từ ngữ khác nhau.
 
 **Ví dụ HIGH similarity:**
 - Sentence A:
-- Sentence B:
-- Tại sao tương đồng:
+"Con chó đuổi theo quả bóng."
+- Sentence B: "Chó con chạy theo quả bóng ."
+- Tại sao tương đồng:Cả 2 đều diễn tả con chó đang đuổi quả bóng
 
 **Ví dụ LOW similarity:**
-- Sentence A:
-- Sentence B:
-- Tại sao khác:
+- Sentence A: "Con chó đuổi theo quả bóng."
+- Sentence B: " Lá có thể quang hợp sinh ra oxi. "
+- Tại sao khác: Câu A kể về "chó"
+nhưng ở câu 2 lại nói về "khả năng quang hợp của lá"
 
 **Tại sao cosine similarity được ưu tiên hơn Euclidean distance cho text embeddings?**
 > *Viết 1-2 câu:*
-
+Cosine similarity chỉ đo góc giữa hai vector, không bị ảnh hưởng bởi độ dài— nên đoạn văn ngắn và đoạn văn dài cùng chủ đề vẫn có similarity cao. Euclidean distance đo khoảng cách tuyệt đối giữa hai điểm,khiến khoảng cách xa hơn dù là tương đồng nghĩa ngữ.
 ### Chunking Math (Ex 1.2)
 
 **Document 10,000 ký tự, chunk_size=500, overlap=50. Bao nhiêu chunks?**
 > *Trình bày phép tính:*
-> *Đáp án:*
+- Formula: `num_chunks = ceil((doc_length - overlap) / (chunk_size - overlap))` 
+
+num_chunks = ceil (10000 - 50) / (500-50)
+= ceil(2,11111) = 23 
+> *Đáp án:*23 chunks
 
 **Nếu overlap tăng lên 100, chunk count thay đổi thế nào? Tại sao muốn overlap nhiều hơn?**
-> *Viết 1-2 câu:*
-
+`num_chunks_new = ceil((10000 - 100) / (500 - 100)) = ceil(9900 / 400) = ceil(24.75)` = **25 chunks** — tăng thêm 2 chunk so với overlap=50. Overlap lớn hơn giúp bảo toàn ngữ cảnh tại ranh giới giữa các chunk, tránh trường hợp một câu quan trọng bị cắt đứt và không xuất hiện đầy đủ trong chunk nào — đặc biệt hữu ích khi retrieval cần context liên tục.
 ---
 
 ## 2. Document Selection — Nhóm (10 điểm)
